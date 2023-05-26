@@ -18,7 +18,7 @@ const len = str.length;
 const string = "race a car";
 
 // call the function
-const value = checkPalindrome(string);
+const value = palindrome(string);
 
 console.log(value);
 }
