@@ -2,16 +2,17 @@
 
 function palindrome(str){
   // Check if the string is a palindrome
-  for (let i = 0; i < Math.floor(str.length / 2); i++) {
-    if (str[i] !== str[str.length - 1 - i]) {
-      return false;
+  str=str.toLowerCase();
+    let i=0;
+    let j=str.length-1;
+    while(i<j){
+        if(str.charAt(i)==str.charAt(j)){
+            i++;
+            j--;
+        }else{
+           return false;
+        }
     }
-  }
-
-  return true;
-}
-const inputString = "race a car";
-console.log("Is Palindrome:", isPalindrome(inputString));
-
+    return true;
 }
 module.exports = palindrome
