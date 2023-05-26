@@ -15,7 +15,7 @@ const len = str.length;
 }
 
 // take input
-const string = prompt('Enter a string: ');
+const string = "race a car";
 
 // call the function
 const value = checkPalindrome(string);
