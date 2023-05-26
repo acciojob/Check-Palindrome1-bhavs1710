@@ -1,25 +1,27 @@
 // complete the given function
 
 function palindrome(str){
-const len = str.length;
+  // Remove non-alphanumeric characters and convert to lowercase
+  str = str.replace(/[^A-Za-z0-9]/g, "").toLowerCase();
 
-    // loop through half of the string
-    for (let i = 0; i < len / 2; i++) {
+  // Check if the string is empty or has a single character
+  if (str.length <= 1) {
+    return true;
+  }
 
-        // check if first and last string are same
-        if (str[i] !== str[len - 1 - i]) {
-            return 'It is not a palindrome';
-        }
+  // Check if the string is a palindrome
+  for (let i = 0; i < Math.floor(str.length / 2); i++) {
+    if (str[i] !== str[str.length - 1 - i]) {
+      return false;
     }
-    return 'It is a palindrome';
+  }
+
+  return true;
 }
 
-// take input
-const string = "race a car";
+// Example usage
+const inputString = "race a car";
+console.log("Is Palindrome:", isPalindrome(inputString));
 
-// call the function
-const value = palindrome(string);
-
-console.log(value);
 }
 module.exports = palindrome
